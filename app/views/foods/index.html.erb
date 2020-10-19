@@ -1,0 +1,14 @@
+<h1>Food Search - Results: <%= @foods.size %></h1>
+
+<% @foods.each do |food| %>
+  <ul class="food-item">
+    <li>-------------------------</li>
+    <li>GTIN/UPC code: <%= food.code %></li>
+    <li>Description: <%= food.description %></li>
+    <li>Brand Owner: <%= food.brand_owner %></li>
+    <ul>Ingredients:</ul>
+    <% food.ingredients.each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+<% end %>

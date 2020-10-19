@@ -7,11 +7,11 @@ describe "Welcome search index" do
     fill_in :q, with: "Sweet Potatoes"
     click_on "Search"
 
-    expect(current_page).to eq(foods_path)
+    expect(current_path).to eq(foods_path)
 
     expect(page).to have_content("Results: 10")
-    expect(age.all('.food-item').size).to eq(10)
-    
+    expect(page.all('.food-item').size).to eq(10)
+
     within page.all('.food-item').first do
       expect(page).to have_content('GTIN/UPC code')
       expect(page).to have_content('Description')
